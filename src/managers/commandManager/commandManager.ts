@@ -2,22 +2,22 @@ import { Command, program } from "commander";
 import { ICommandManager } from "./types/types";
 
 export class CommandManager implements ICommandManager {
-    constructor(program: Command) {
-        this.init(program);
+    constructor(public program: Command) {
+        this.init();
     }
 
-    init = (program: Command) => {
+    init = () => {
         // TODO init program
-        program
+        this.program
             .version("0.0.1")
             .description("Fullstack Workspace Toolkit")
             .option("-t, --test", "Log test message")
             .parse(process.argv);
 
-        this.registerCommands(program);
+        this.registerCommands();
     };
 
-    registerCommands = (program: Command) => {
+    registerCommands = () => {
         // TODO register all commands in commands folder
     };
 

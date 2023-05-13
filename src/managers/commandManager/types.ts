@@ -1,7 +1,8 @@
 import { Command } from "commander";
 
 export interface ICommandManager {
-    init: (program: Command) => void;
-    registerCommands: (program: Command) => void;
+    program: Command;
+    init: () => void;
+    registerCommands: () => void;
     onRawCommand: () => void;
 }
