@@ -1,14 +1,15 @@
-import { FrameworkManager } from "../frameworkManager/frameworkManager";
 import { IBundlerFramework } from "../frameworkManager/types";
-
 export interface IProjectManager {
-    projects?: { [id: string]: IProject };
+    projects?: {
+        [id: string]: IProject;
+    };
     projectPaths?: string[];
     packagePaths?: string[];
-    getPackageJson: (projectId: string) => { [key: string]: any };
+    getPackageJson: (projectId: string) => {
+        [key: string]: any;
+    };
     updatePaths: () => void;
 }
-
 export interface IProject {
     id: string;
     name: string;
@@ -17,7 +18,6 @@ export interface IProject {
     bundlerFramework: IBundlerFramework;
     features: IFeature[];
 }
-
 export interface IFeature {
     id: string;
     name: string;
